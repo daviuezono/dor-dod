@@ -1,0 +1,21 @@
+body {
+  /*padding-bottom: 500px;*/
+}
+
+textarea {
+  max-width: 100%;
+}
+
+#codeChange {
+   display: none
+}
+
+.error {
+	color: red;
+  font-size: large;
+  display: none
+}
+
+.button-control-step {
+  text-align: right;
+}

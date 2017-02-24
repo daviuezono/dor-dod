@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Check-list for DoR and DoD</title>
+
+    <link href="http://getbootstrap.com/assets/css/docs.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="http://getbootstrap.com/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Custom -->
+    <script src="jquery-1.12.0.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="custom.js"></script>
+    <script src="js/label-element.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="clipboard.min.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+          </ul>
+        </nav>
+        <h1 class="text-muted">Check-list for DoR and DoD</h1>
+      </div>
+
+      <form id="comment" method="post">
+
+        <h2 id="status-transition" class="page-header">Status Transition</h2>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="bs-callout bs-callout-info">
+              <div class="form-group">
+                <label for="status_transition">Which status transition?</label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status0" type="radio" name="status_transition" value="From 'To Do' to 'Analyzing'." onclick=showCheckList("status0")>
+                  From 'To Do' to 'Analyzing'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status1" type="radio" name="status_transition" value="From 'Analyzing' to 'In Progress'." onclick=showCheckList("status1")>
+                  From 'Analyzing' to 'In Progress'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status2" type="radio" name="status_transition" value="From 'In Progress' to 'Waiting CR'." onclick=showCheckList("status2")>
+                  From 'In Progress' to 'Waiting CR'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status3" type="radio" name="status_transition" value="From 'Waiting CR' to 'In Code Review'." onclick=showCheckList("status3")>
+                  From 'Waiting CR' to 'In Code Review'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status4" type="radio" name="status_transition" value="From 'In Code Review' to 'Waiting QA'." onclick=showCheckList("status4")>
+                  From 'In Code Review' to 'Waiting QA'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status5" type="radio" name="status_transition" value="From 'Waiting QA' to 'In QA'." onclick=showCheckList("status5")>
+                  From 'Waiting QA' to 'In QA'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status6" type="radio" name="status_transition" value="From 'In QA' to 'Waiting MTS'." onclick=showCheckList("status6")>
+                  From 'In QA' to 'Waiting MTS'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status7" type="radio" name="status_transition" value="From 'Waiting MTS' to 'In MTS'." onclick=showCheckList("status7")>
+                  From 'Waiting MTS' to 'In MTS'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status8" type="radio" name="status_transition" value="From 'In MTS' to 'ReadyTestStg'." onclick=showCheckList("status8")>
+                  From 'In MTS' to 'ReadyTestStg'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status9" type="radio" name="status_transition" value="From 'ReadyTestStg' to 'In UAT'." onclick=showCheckList("status9")>
+                  From 'ReadyTestStg' to 'In UAT'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status10" type="radio" name="status_transition" value="From 'In UAT' to 'Waiting MTP'." onclick=showCheckList("status10")>
+                  From 'In UAT' to 'Waiting MTP'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status11" type="radio" name="status_transition" value="From 'Waiting MTP' to 'In MTP'." onclick=showCheckList("status11")>
+                  From 'Waiting MTP' to 'In MTP'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status12" type="radio" name="status_transition" value="From 'In MTP' to 'ReadyTestProd'." onclick=showCheckList("status12")>
+                  From 'In MTP' to 'ReadyTestProd'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status13" type="radio" name="status_transition" value="From 'ReadyTestProd' to 'Closed'." onclick=showCheckList("status13")>
+                  From 'ReadyTestProd' to 'Closed'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status14" type="radio" name="status_transition" value="From 'In Progress' to 'Waiting QA'." onclick=showCheckList("status14")>
+                  From 'In Progress' to 'Waiting QA'.
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input id="status15" type="radio" name="status_transition" value="From 'In Progress' to 'Closed'." onclick=showCheckList("status15")>
+                  From 'In Progress' to 'Closed'.
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status0">
+          <h2 class="page-header">From 'To Do' to 'Analyzing'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status0" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status0" value="Final assets attached or linked">
+                    Final assets attached or linked
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status0" value="Due dates are set">
+                    Due dates are set
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status0" value="Components of the task are set">
+                    Components of the task are set
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="dordod-status1">
+          <h2 class="page-header">From 'Analyzing' to 'In Progress'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status1" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status1" value="CPs are counted">
+                    CPs are counted
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status1" value="Task is estimated">
+                    Task is estimated
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="dordod-status2">
+          <h2 class="page-header">From 'In Progress' to 'Waiting CR'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status2" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status2" value="Task applied for all Components">
+                    Task applied for all Components
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status2" value="Documentation for MTS/MTP done">
+                    Documentation for MTS/MTP done
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status2" value="Documentation for Unit Tests done">
+                    Documentation for Unit Tests done
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status2" value="Execution of Unit Tests">
+                    Execution of Unit Tests
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status3">
+          <h2 class="page-header">From 'Waiting CR' to 'Code Review'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="dordod-status4">
+          <h2 class="page-header">From 'Code Review' to 'Waiting QA'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status4" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status4" value="Check code standards">
+                    Check code standards
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status4" value="Check vulnerability">
+                    Check vulnerability
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status4" value="Check performance">
+                    Check performance
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status5">
+          <h2 class="page-header">From 'Waiting QA' to 'In QA'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status5" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status5" value="Generate Builds (back-end and Drupal)">
+                    Generate Builds (back-end and Drupal)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status5" value="Create test cases">
+                    Create test cases
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status6">
+          <h2 class="page-header">From 'In QA' to 'Waiting MTS'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status6" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status6" value="Task applied for all Components">
+                    Task applied for all Components
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status6" value="Tests performed in all dev browsers">
+                    Tests performed in all dev browsers
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status6" value="Behat scripts">
+                    Behat scripts
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status7">
+          <h2 class="page-header">From 'Waiting MTS' to 'In MTS'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status8">
+          <h2 class="page-header">From 'In MTS' to 'ReadyTestStg'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status8" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status8" value="Task applied for all Components">
+                    Task applied for all Components
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status8" value="Execution of Unit Tests">
+                    Execution of Unit Tests
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status9">
+          <h2 class="page-header">From 'ReadyTestStg' to 'In UAT'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status9" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status9" value="Execution of all tests in all dev browsers">
+                    Execution of all tests in all dev browsers
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status9" value="UAT e-mail sent">
+                    UAT e-mail sent
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status10">
+          <h2 class="page-header">From 'In UAT' to 'Waiting MTP'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status10" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status10" value="UAT e-mail approved">
+                    UAT e-mail approved
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status11">
+          <h2 class="page-header">From 'Waiting MTP' to 'In MTP'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status11" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status12">
+          <h2 class="page-header">From 'In MTP' to 'ReadyTestProd'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status12" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status12" value="Task applied for all Components">
+                    Task applied for all Components
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status12" value="Execution of Unit Tests">
+                    Execution of Unit Tests
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="dordod-status13">
+          <h2 class="page-header">From 'ReadyTestProd' to 'Closed'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status13" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status13" value="Execution of all tests in all dev browser">
+                    Execution of all tests in all dev browser
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status13" value="Go-Live e-mail sent">
+                    Go-Live e-mail sent
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status14">
+          <h2 class="page-header">From 'In Progress' to 'Waiting QA'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status14" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status14" value="Task applied for all Components">
+                    Task applied for all Components
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status14" value="Documentation for MTS/MTP done">
+                    Documentation for MTS/MTP done
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status14" value="Documentation for Unit Tests done">
+                    Documentation for Unit Tests done
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status14" value="Check vulnerability">
+                    Check vulnerability
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status14" value="Check performance">
+                    Check performance
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dordod-status15">
+          <h2 class="page-header">From 'In Progress' to 'Closed'.</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bs-callout bs-callout-info">
+                <div class="form-group">
+                  <label for="status_transition">CheckList</label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status15" value="Task is not RED">
+                    Task is not RED
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status15" value="Task applied for all Components">
+                    Task applied for all Components
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="status15" value="Go-Live e-mail sent">
+                    Go-Live e-mail sent
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ---------------------------- -->
+
+
+        <div id="dordod-buttons">
+          <button id="gerarHtml" data-clipboard-action="copy" data-clipboard-target="#result"
+            class="btn btn-success btn-lg" onclick="showResult()">Generate HTML</button>
+
+          <button id="refreshPage" data-clipboard-action="copy"
+            class="btn btn-danger btn-lg" onclick="location.reload();">Refresh Form</button>
+        </div>
+      </form>
+
+      <!-- Result -->
+      <div id="dordod-results">
+        <h2>Result</h2>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="bs-callout bs-callout-default">
+              <div class="form-group">
+                <textarea name="result" id="result" class="form-control" rows="20"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Result -->
+
+    </div> <!-- /container -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
